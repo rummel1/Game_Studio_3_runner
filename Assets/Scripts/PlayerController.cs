@@ -13,7 +13,7 @@ public class PlayerController: MonoBehaviour
     private Rigidbody _rb;
     public Boundary boundary;
 
-    [SerializeField] private Joystick _joystick;
+    //[SerializeField] private Joystick _joystick;
 
    
     [SerializeField] private float _velocityRotationX;
@@ -42,8 +42,9 @@ public class PlayerController: MonoBehaviour
     }
     private void _movement()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         transform.position = new Vector3(Mathf.Clamp(transform.position.x,boundary.minX,boundary.maxX ), transform.position.y, transform.position.z);
-        _rb.velocity=new Vector3(_joystick.Horizontal*_leftrightSpeed* Time.deltaTime, _rb.velocity.y,_rb.velocity.z);
+        _rb.velocity=new Vector3(horizontalInput*_leftrightSpeed* Time.deltaTime, _rb.velocity.y,_rb.velocity.z);
         
         
         _rb.rotation=Quaternion.Euler(_rb.velocity.z*_velocityRotationZ,0,_rb.velocity.x*-_velocityRotationX);

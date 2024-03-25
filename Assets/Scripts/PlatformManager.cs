@@ -14,7 +14,7 @@ public class PlatformManager : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating(nameof(FirstPlatformSpawn),0,6);
+        InvokeRepeating(nameof(FirstPlatformSpawn),0,3);
     }
 
     // Update is called once per frame
@@ -54,10 +54,10 @@ public class PlatformManager : MonoBehaviour
 
     private void SecondPlatform()
     {
-        InvokeRepeating(nameof(SecondPlatformSpawn), 0f, 10);
+        InvokeRepeating(nameof(SecondPlatformSpawn), 0f, 6);
     }
     private void FirstPlatform()
     {
-        InvokeRepeating(nameof(FirstPlatformSpawn), 0f, 10);
+        InvokeRepeating(nameof(FirstPlatformSpawn), 0f, 6);
     }
 }
