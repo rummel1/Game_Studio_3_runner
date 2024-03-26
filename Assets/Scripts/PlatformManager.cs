@@ -14,7 +14,9 @@ public class PlatformManager : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating(nameof(FirstPlatformSpawn),0,3);
+        GameObject nesne = Instantiate(platform1,new Vector3(platform1.transform.position.x,platform1.transform.position.y,Platform.endPoint.z), Quaternion.identity);
+        Destroy(nesne,25);
+        InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
     }
 
     // Update is called once per frame
