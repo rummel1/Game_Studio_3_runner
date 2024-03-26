@@ -32,6 +32,14 @@ public class PlayerController: MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.W))
+        {
+            _forwardSpeed = 450;
+        }
+        else
+        {
+            _forwardSpeed = 150;
+        }
         _movement();
         ForwardMovement();
     }
