@@ -6,7 +6,9 @@ public class PlatformManager : MonoBehaviour
 {
     [SerializeField] private GameObject platform1;
     [SerializeField] private GameObject platform2;
+    [SerializeField] private GameObject fish1;
     [SerializeField] private Transform player;
+    private Vector3 eren;
     
 
     private float secondTime=60.1f;
@@ -17,6 +19,7 @@ public class PlatformManager : MonoBehaviour
         GameObject nesne = Instantiate(platform1,new Vector3(platform1.transform.position.x,platform1.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
         InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
+        InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(1,10));
     }
 
     // Update is called once per frame
@@ -39,7 +42,11 @@ public class PlatformManager : MonoBehaviour
         }
     }
 
-    
+    private void FirstFishSpawn()
+    {
+        GameObject nesne = Instantiate(fish1,new Vector3(fish1.transform.position.x,fish1.transform.position.y,player.position.z+Random.Range(5,10)), Quaternion.identity);
+        Destroy(nesne,15);
+    }
     private void SecondPlatformSpawn()
     {
        
