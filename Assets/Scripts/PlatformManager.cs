@@ -20,7 +20,7 @@ public class PlatformManager : MonoBehaviour
         GameObject platform = platforms[Random.Range(0, 5)];
         GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
-        InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
+       // InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
         InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(5,10));
     }
 
