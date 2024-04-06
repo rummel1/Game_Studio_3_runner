@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
+    [SerializeField] private GameObject[] platforms;
     [SerializeField] private GameObject platform1;
     [SerializeField] private GameObject platform2;
     [SerializeField] private GameObject fish1;
@@ -16,10 +17,11 @@ public class PlatformManager : MonoBehaviour
     
     void Start()
     {
-        GameObject nesne = Instantiate(platform1,new Vector3(platform1.transform.position.x,platform1.transform.position.y,Platform.endPoint.z), Quaternion.identity);
+        GameObject platform = platforms[Random.Range(0, 5)];
+        GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
         InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
-        InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(1,10));
+        InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(5,10));
     }
 
     // Update is called once per frame
@@ -44,20 +46,21 @@ public class PlatformManager : MonoBehaviour
 
     private void FirstFishSpawn()
     {
+        
         GameObject nesne = Instantiate(fish1,new Vector3(fish1.transform.position.x,fish1.transform.position.y,player.position.z+Random.Range(5,10)), Quaternion.identity);
         Destroy(nesne,15);
     }
     private void SecondPlatformSpawn()
     {
-       
-        GameObject nesne = Instantiate(platform2,new Vector3(platform2.transform.position.x,platform2.transform.position.y,Platform.endPoint.z), Quaternion.identity);
-        Platform platform = nesne.GetComponent<Platform>();
+        int random = Random.Range(0, 5);
+        GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
     }
     
     private void FirstPlatformSpawn()
     {
-        GameObject nesne = Instantiate(platform1,new Vector3(platform1.transform.position.x,platform1.transform.position.y,Platform.endPoint.z), Quaternion.identity);
+        int random = Random.Range(0, 3)+Random.Range(0, 3);
+        GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
     }
 
