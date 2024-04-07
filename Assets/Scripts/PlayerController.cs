@@ -13,33 +13,79 @@ public class PlayerController: MonoBehaviour
     private Rigidbody _rb;
     public Boundary boundary;
 
+    public AngryBar angryBar;
     //[SerializeField] private Joystick _joystick;
 
    
     [SerializeField] private float _velocityRotationX;
     [SerializeField] private float _velocityRotationZ;
     [SerializeField] private float _speedBoat;
+
+
+    private int _fastspeed=400;
+    private int _slowspeed=150;
+    private int _upspeed;
+    private bool _upSpeedControl;
     
-    
-     public static float _forwardSpeed=150;
-     public static float _leftrightSpeed=150;
+    public static float _forwardSpeed=150;
+    public static float _leftrightSpeed=150;
 
     public void Start()
     {
+        angryBar.SetMinValue(_upspeed);
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
+        {
+            _forwardSpeed =_fastspeed;
+            _upSpeedControl = true;
+
+        }
+
+        if (_upspeed==100)
+        {
+            _upSpeedControl = false;
+        }
+        if (Input.GetKeyUp(KeyCode.W)|| _upspeed==100)
+        {
+            _forwardSpeed = _slowspeed;
+            _upSpeedControl = false;
+        }
+        
+        switch (_upSpeedControl)
+        {
+            case true:
+            {
+                if (_upspeed>=0)
+                {
+                    if (_upspeed < 100)
+                    {
+                        _upspeed += 1;
+                        angryBar.SetValue(_upspeed);
+                    }
+                }
+
+                break;
+            }
+            case false:
+            {
+                if (_upspeed>=2)
+                {
+                    _upspeed -= 1;
+                    angryBar.SetValue(_upspeed);
+                }
+
+                break;
+            }
+        }
+    }
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            _forwardSpeed = 450;
-        }
-        else
-        {
-            _forwardSpeed = 150;
-        }
+        Debug.Log(_upspeed);
         _movement();
         ForwardMovement();
     }
