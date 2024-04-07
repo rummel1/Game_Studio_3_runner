@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] platforms;
-    [SerializeField] private GameObject platform1;
-    [SerializeField] private GameObject platform2;
     [SerializeField] private GameObject fish1;
     [SerializeField] private Transform player;
     private Vector3 eren;
@@ -20,7 +18,7 @@ public class PlatformManager : MonoBehaviour
         GameObject platform = platforms[Random.Range(0, 5)];
         GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
-       // InvokeRepeating(nameof(FirstPlatformSpawn),1,6);
+        InvokeRepeating(nameof(FirstPlatformSpawn),1,3);
         InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(5,10));
     }
 
@@ -52,24 +50,24 @@ public class PlatformManager : MonoBehaviour
     }
     private void SecondPlatformSpawn()
     {
-        int random = Random.Range(0, 5);
+        int random = Random.Range(0, 3)+Random.Range(0, 3);
         GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
-        Destroy(nesne,25);
+        Destroy(nesne,90);
     }
     
     private void FirstPlatformSpawn()
     {
         int random = Random.Range(0, 3)+Random.Range(0, 3);
         GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
-        Destroy(nesne,25);
+        Destroy(nesne,90);
     }
 
     private void SecondPlatform()
     {
-        InvokeRepeating(nameof(SecondPlatformSpawn), 0f, 6);
+        InvokeRepeating(nameof(SecondPlatformSpawn), 0f, 3);
     }
     private void FirstPlatform()
     {
-        InvokeRepeating(nameof(FirstPlatformSpawn), 0f, 6);
+        InvokeRepeating(nameof(FirstPlatformSpawn), 0f, 3);
     }
 }
