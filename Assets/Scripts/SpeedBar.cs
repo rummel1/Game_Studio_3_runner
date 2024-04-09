@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AngryBar : MonoBehaviour
+public class SpeedBar : MonoBehaviour
 {
     // Start is called before the first frame update
     public Slider slider;
@@ -13,7 +13,7 @@ public class AngryBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = 100f;
+        slider.value = 0f;
     }
 
     // Update is called once per frame

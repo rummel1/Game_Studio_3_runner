@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class Boundary
@@ -13,7 +14,7 @@ public class PlayerController: MonoBehaviour
     private Rigidbody _rb;
     public Boundary boundary;
 
-    public AngryBar angryBar;
+    public SpeedBar SpeedBar;
     //[SerializeField] private Joystick _joystick;
 
    
@@ -32,7 +33,7 @@ public class PlayerController: MonoBehaviour
 
     public void Start()
     {
-        angryBar.SetMinValue(_upspeed);
+        SpeedBar.SetMinValue(_upspeed);
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -64,7 +65,7 @@ public class PlayerController: MonoBehaviour
                     if (_upspeed < 100)
                     {
                         _upspeed += 1;
-                        angryBar.SetValue(_upspeed);
+                        SpeedBar.SetValue(_upspeed);
                     }
                 }
 
@@ -75,7 +76,7 @@ public class PlayerController: MonoBehaviour
                 if (_upspeed>=2)
                 {
                     _upspeed -= 1;
-                    angryBar.SetValue(_upspeed);
+                    SpeedBar.SetValue(_upspeed);
                 }
 
                 break;

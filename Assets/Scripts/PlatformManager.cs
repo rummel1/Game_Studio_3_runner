@@ -13,8 +13,9 @@ public class PlatformManager : MonoBehaviour
     private float secondTime=60.1f;
     private float firstTime = 90.1f;
     
-    void Start()
+    public void Start()
     {
+        Platform.endPoint = new Vector3(0, 0, 0);
         GameObject platform = platforms[Random.Range(0, 5)];
         GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
