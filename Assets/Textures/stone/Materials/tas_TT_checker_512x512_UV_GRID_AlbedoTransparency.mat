@@ -43,23 +43,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f93e4cce797f7544aa95c31ed3b07a62, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _metallic:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 06eaec87bfedfed468d83e0064244ca7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a7f4116e89fb55a4da511d6512f82113, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _Backwards_strength: 0
     - _BumpScale: 3
-    - _Tile_strengthX: 0
-    - _Tile_strengthY: 0
+    - _Tile_strengthX: 1
+    - _Tile_strengthY: 1
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5947729915059012686

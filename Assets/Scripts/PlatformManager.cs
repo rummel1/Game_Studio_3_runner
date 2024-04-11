@@ -16,7 +16,7 @@ public class PlatformManager : MonoBehaviour
     public void Start()
     {
         Platform.endPoint = new Vector3(0, 0, 0);
-        GameObject platform = platforms[Random.Range(0, 5)];
+        GameObject platform = platforms[Random.Range(0, 10)];
         GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,25);
         InvokeRepeating(nameof(FirstPlatformSpawn),1,3);
@@ -51,7 +51,7 @@ public class PlatformManager : MonoBehaviour
     }
     private void SecondPlatformSpawn()
     {
-        int random = Random.Range(0, 3)+Random.Range(0, 3);
+        int random = Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 4);
         GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,90);
     }

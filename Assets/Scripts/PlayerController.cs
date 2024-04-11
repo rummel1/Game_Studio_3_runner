@@ -11,13 +11,14 @@ public class Boundary
 }
 public class PlayerController: MonoBehaviour
 {
-    private Rigidbody _rb;
+   
     public Boundary boundary;
 
     public SpeedBar SpeedBar;
     //[SerializeField] private Joystick _joystick;
 
-   
+    private Rigidbody _rb;
+    private int _maxHealth=3;
     [SerializeField] private float _velocityRotationX;
     [SerializeField] private float _velocityRotationZ;
     [SerializeField] private float _speedBoat;
@@ -27,7 +28,9 @@ public class PlayerController: MonoBehaviour
     private int _slowspeed=150;
     private int _upspeed;
     private bool _upSpeedControl;
-    
+
+
+    public GameObject deadScreen;
     public static float _forwardSpeed=150;
     public static float _leftrightSpeed=150;
 
@@ -39,6 +42,10 @@ public class PlayerController: MonoBehaviour
 
     private void Update()
     {
+        if (_maxHealth==0)
+        {
+            deadScreen.SetActive(true);
+        }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
         {
             _forwardSpeed =_fastspeed;
@@ -86,7 +93,6 @@ public class PlayerController: MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(_upspeed);
         _movement();
         ForwardMovement();
     }
@@ -109,5 +115,15 @@ public class PlayerController: MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Wood"))
+        {
+            Debug.Log("wood");
+            _maxHealth --;
+        }
+        if (other.CompareTag("Stone"))
+        {
+            _maxHealth --;
+            Debug.Log("stone");
+        }
     }
 }
