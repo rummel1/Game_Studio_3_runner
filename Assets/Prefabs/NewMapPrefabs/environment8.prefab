@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 4317045269927377292}
   m_Layer: 0
   m_Name: Environment8
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

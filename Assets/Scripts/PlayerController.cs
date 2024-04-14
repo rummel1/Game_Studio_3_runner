@@ -45,6 +45,8 @@ public class PlayerController: MonoBehaviour
         if (_maxHealth==0)
         {
             deadScreen.SetActive(true);
+            gameObject.SetActive(false);
+            
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
         {
@@ -91,6 +93,7 @@ public class PlayerController: MonoBehaviour
         }
     }
 
+    
     void FixedUpdate()
     {
         _movement();
@@ -111,10 +114,23 @@ public class PlayerController: MonoBehaviour
         _rb.rotation=Quaternion.Euler(_rb.velocity.z*_velocityRotationZ,0,_rb.velocity.x*-_velocityRotationX);
     }
 
-   
+    public void RetryButton()
+    {
+        gameObject.SetActive(true);
+        _maxHealth = 3;
+        transform.position = new Vector3(0, 0, 0);
+        deadScreen.SetActive(false);
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(other.gameObject);
+        if (other.CompareTag("Fish"))
+        {
+            Debug.Log("fish");
+            _maxHealth --;
+        }
         if (other.CompareTag("Wood"))
         {
             Debug.Log("wood");

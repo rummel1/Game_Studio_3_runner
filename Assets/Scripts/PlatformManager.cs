@@ -15,12 +15,12 @@ public class PlatformManager : MonoBehaviour
     
     public void Start()
     {
+        foreach (var o in GameObject.FindGameObjectsWithTag("Environment")) Destroy(o);
+       
         Platform.endPoint = new Vector3(0, 0, 0);
-        GameObject platform = platforms[Random.Range(0, 10)];
-        GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
-        Destroy(nesne,25);
+        StartCoroutine(FirstSpawn());
         InvokeRepeating(nameof(FirstPlatformSpawn),1,3);
-        InvokeRepeating(nameof(FirstFishSpawn),0,Random.Range(5,10));
+        InvokeRepeating(nameof(FirstFishSpawn),4,Random.Range(5,10));
     }
 
     // Update is called once per frame
@@ -43,6 +43,19 @@ public class PlatformManager : MonoBehaviour
         }
     }
 
+    IEnumerator FirstSpawn()
+    {
+        GameObject nesne1 = Instantiate(platforms[10],new Vector3(platforms[10].transform.position.x,platforms[10].transform.position.y,Platform.endPoint.z), Quaternion.identity);
+        Destroy(nesne1,25);
+        yield return new WaitForSeconds(0.01f);
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject platform = platforms[ Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 4)];
+            GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
+            Destroy(nesne,25);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
     private void FirstFishSpawn()
     {
         
