@@ -30,6 +30,9 @@ public class PlayerController: MonoBehaviour
     private bool _upSpeedControl;
 
 
+    public GameObject X3;
+    public GameObject X2;
+    public GameObject X1;
     public GameObject deadScreen;
     public static float _forwardSpeed=150;
     public static float _leftrightSpeed=150;
@@ -46,6 +49,17 @@ public class PlayerController: MonoBehaviour
         {
             deadScreen.SetActive(true);
             gameObject.SetActive(false);
+            X1.SetActive(true);
+            
+        }
+        if (_maxHealth==1)
+        {
+           X2.SetActive(true);
+            
+        }
+        if (_maxHealth==2)
+        {
+           X3.SetActive(true);
             
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
@@ -120,6 +134,9 @@ public class PlayerController: MonoBehaviour
         _maxHealth = 3;
         transform.position = new Vector3(0, 0, 0);
         deadScreen.SetActive(false);
+        X2.SetActive(false);
+        X3.SetActive(false);
+        X1.SetActive(false);
         
     }
 
