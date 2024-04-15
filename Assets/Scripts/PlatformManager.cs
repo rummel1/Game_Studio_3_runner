@@ -46,13 +46,13 @@ public class PlatformManager : MonoBehaviour
     IEnumerator FirstSpawn()
     {
         GameObject nesne1 = Instantiate(platforms[10],new Vector3(platforms[10].transform.position.x,platforms[10].transform.position.y,Platform.endPoint.z), Quaternion.identity);
-        Destroy(nesne1,25);
+        Destroy(nesne1,40);
         yield return new WaitForSeconds(0.01f);
         for (int i = 0; i < 4; i++)
         {
             GameObject platform = platforms[ Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 4)];
             GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
-            Destroy(nesne,25);
+            Destroy(nesne,60);
             yield return new WaitForSeconds(0.01f);
         }
     }
