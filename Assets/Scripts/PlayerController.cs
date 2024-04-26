@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -18,7 +19,7 @@ public class PlayerController: MonoBehaviour
     //[SerializeField] private Joystick _joystick;
 
     private Rigidbody _rb;
-    private int _maxHealth=3;
+    public static int MaxHealth=3;
     [SerializeField] private float _velocityRotationX;
     [SerializeField] private float _velocityRotationZ;
     [SerializeField] private float _speedBoat;
@@ -45,19 +46,19 @@ public class PlayerController: MonoBehaviour
 
     private void Update()
     {
-        if (_maxHealth==0)
+        if (MaxHealth==0)
         {
             deadScreen.SetActive(true);
             gameObject.SetActive(false);
             X1.SetActive(true);
             
         }
-        if (_maxHealth==1)
+        if (MaxHealth==1)
         {
            X2.SetActive(true);
             
         }
-        if (_maxHealth==2)
+        if (MaxHealth==2)
         {
            X3.SetActive(true);
             
@@ -131,7 +132,7 @@ public class PlayerController: MonoBehaviour
     public void RetryButton()
     {
         gameObject.SetActive(true);
-        _maxHealth = 3;
+        MaxHealth = 3;
         transform.position = new Vector3(0, 0, 0);
         deadScreen.SetActive(false);
         X2.SetActive(false);
@@ -142,21 +143,10 @@ public class PlayerController: MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        if (other.CompareTag("Fish"))
+        IDamage damage = other.GetComponent<IDamage>();
+        if (damage !=null)
         {
-            Debug.Log("fish");
-            _maxHealth --;
-        }
-        if (other.CompareTag("Wood"))
-        {
-            Debug.Log("wood");
-            _maxHealth --;
-        }
-        if (other.CompareTag("Stone"))
-        {
-            _maxHealth --;
-            Debug.Log("stone");
+            damage.Damage();
         }
     }
 }
