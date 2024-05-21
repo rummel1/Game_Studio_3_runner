@@ -1691,10 +1691,6 @@ MonoBehaviour:
   _velocityRotationX: 2
   _velocityRotationZ: 0
   _speedBoat: 0
-  X3: {fileID: 0}
-  X2: {fileID: 0}
-  X1: {fileID: 0}
-  deadScreen: {fileID: 0}
 --- !u!1 &2038434317
 GameObject:
   m_ObjectHideFlags: 0
