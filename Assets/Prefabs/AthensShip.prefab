@@ -240,9 +240,14 @@ MonoBehaviour:
   boundary:
     minX: -10
     maxX: 10
+  SpeedBar: {fileID: 0}
   _velocityRotationX: 2
   _velocityRotationZ: 0
   _speedBoat: 0
+  X3: {fileID: 0}
+  X2: {fileID: 0}
+  X1: {fileID: 0}
+  deadScreen: {fileID: 0}
 --- !u!54 &4574277961283944566
 Rigidbody:
   m_ObjectHideFlags: 0
