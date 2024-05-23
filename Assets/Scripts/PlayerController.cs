@@ -140,13 +140,5 @@ public class PlayerController: MonoBehaviour
         X1.SetActive(false);
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        IDamage damage = other.GetComponent<IDamage>();
-        if (damage !=null)
-        {
-            damage.Damage();
-        }
-    }
+    
 }
