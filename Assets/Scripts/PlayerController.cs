@@ -31,6 +31,7 @@ public class PlayerController: MonoBehaviour
     private bool _upSpeedControl;
 
 
+    public Animator Pirateanim;
     public GameObject X3;
     public GameObject X2;
     public GameObject X1;
@@ -42,6 +43,7 @@ public class PlayerController: MonoBehaviour
     {
         SpeedBar.SetMinValue(_upspeed);
         _rb = GetComponent<Rigidbody>();
+        StartCoroutine(nameof(PirateAnim));
     }
 
     private void Update()
@@ -129,6 +131,17 @@ public class PlayerController: MonoBehaviour
         _rb.rotation=Quaternion.Euler(_rb.velocity.z*_velocityRotationZ,0,_rb.velocity.x*-_velocityRotationX);
     }
 
+    private IEnumerator PirateAnim()
+    {
+        while (true)
+        {
+            float waitTime = UnityEngine.Random.Range(5f, 15f);
+            Pirateanim.SetTrigger("Ter");
+            yield return new WaitForSeconds(waitTime);
+        }
+        
+        // ReSharper disable once IteratorNeverReturns
+    }
     public void RetryButton()
     {
         gameObject.SetActive(true);
