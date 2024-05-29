@@ -19,7 +19,7 @@ public class PlayerController: MonoBehaviour
     //[SerializeField] private Joystick _joystick;
 
     private Rigidbody _rb;
-    public static int MaxHealth=3;
+    public static int MaxHealth=1;
     [SerializeField] private float _velocityRotationX;
     [SerializeField] private float _velocityRotationZ;
     [SerializeField] private float _speedBoat;
@@ -32,9 +32,7 @@ public class PlayerController: MonoBehaviour
 
 
     public Animator Pirateanim;
-    public GameObject X3;
-    public GameObject X2;
-    public GameObject X1;
+    public Animator Pirateanimhealth;
     public GameObject deadScreen;
     public static float _forwardSpeed=150;
     public static float _leftrightSpeed=150;
@@ -48,21 +46,10 @@ public class PlayerController: MonoBehaviour
 
     private void Update()
     {
-        if (MaxHealth==0)
+        if (PirateSpawner.pirateCount==0)
         {
             deadScreen.SetActive(true);
             gameObject.SetActive(false);
-            X1.SetActive(true);
-            
-        }
-        if (MaxHealth==1)
-        {
-           X2.SetActive(true);
-            
-        }
-        if (MaxHealth==2)
-        {
-           X3.SetActive(true);
             
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
@@ -137,6 +124,7 @@ public class PlayerController: MonoBehaviour
         {
             float waitTime = UnityEngine.Random.Range(5f, 15f);
             Pirateanim.SetTrigger("Ter");
+            Pirateanimhealth.SetTrigger("Yell");
             yield return new WaitForSeconds(waitTime);
         }
         
@@ -144,13 +132,11 @@ public class PlayerController: MonoBehaviour
     }
     public void RetryButton()
     {
+        PirateSpawner.pirateCount = 1;
         gameObject.SetActive(true);
         MaxHealth = 3;
         transform.position = new Vector3(0, 0, 0);
         deadScreen.SetActive(false);
-        X2.SetActive(false);
-        X3.SetActive(false);
-        X1.SetActive(false);
         
     }
     

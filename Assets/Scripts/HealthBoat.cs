@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Interfaces;
 using UnityEngine;
 
-public class Obstacles : MonoBehaviour, IDamage
+public class HealthBoat : MonoBehaviour, IHealth
 {
     // Start is called before the first frame update
     void Start()
@@ -17,12 +16,9 @@ public class Obstacles : MonoBehaviour, IDamage
         
     }
 
-    public void Damage()
+    public void Health()
     {
         Destroy(gameObject);
-        PlayerController.MaxHealth -= 1;
-        PirateSpawner.instance.DeletePirate();
-        PirateSpawner.pirateCount -= 1;
-
+        PirateSpawner.instance.SpawnPirate();
     }
 }

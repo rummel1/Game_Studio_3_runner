@@ -10,5 +10,11 @@ public class ShipCollider : MonoBehaviour
         {
             damage.Damage();
         }
+
+        IHealth health = other.GetComponent<IHealth>();
+        if (health!=null)
+        {
+            health.Health();
+        }
     }
 }
