@@ -25,6 +25,8 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float _speedBoat;
 
 
+    private int _levelScore;
+    private int _bestScore;
     private int _fastspeed=400;
     private int _slowspeed=150;
     private int _upspeed;
@@ -46,10 +48,16 @@ public class PlayerController: MonoBehaviour
 
     private void Update()
     {
-        if (PirateSpawner.pirateCount==0)
+        if (MaxHealth==0)
         {
+            _levelScore = ScoreSystem.instance.score;
+            Debug.Log("best score" + _levelScore);
             deadScreen.SetActive(true);
             gameObject.SetActive(false);
+            if (_levelScore>_bestScore)
+            {
+                //best score'u kaydet ve yazdır.
+            }
             
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
@@ -122,6 +130,7 @@ public class PlayerController: MonoBehaviour
     {
         while (true)
         {
+            
             float waitTime = UnityEngine.Random.Range(5f, 15f);
             Pirateanim.SetTrigger("Ter");
             Pirateanimhealth.SetTrigger("Yell");
@@ -132,9 +141,10 @@ public class PlayerController: MonoBehaviour
     }
     public void RetryButton()
     {
+        ScoreSystem.instance.ResetScore();
         PirateSpawner.pirateCount = 1;
         gameObject.SetActive(true);
-        MaxHealth = 3;
+        MaxHealth = 1;
         transform.position = new Vector3(0, 0, 0);
         deadScreen.SetActive(false);
         

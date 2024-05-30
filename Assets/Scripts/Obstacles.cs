@@ -20,9 +20,6 @@ public class Obstacles : MonoBehaviour, IDamage
     public void Damage()
     {
         Destroy(gameObject);
-        PlayerController.MaxHealth -= 1;
         PirateSpawner.instance.DeletePirate();
-        PirateSpawner.pirateCount -= 1;
-
     }
 }

@@ -18,7 +18,10 @@ public class PirateSpawner : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     void Start()
@@ -44,8 +47,6 @@ public class PirateSpawner : MonoBehaviour
     
     public void SpawnPirate()
     {
-        if (pirateCount<=6)
-        {
             switch (pirateCount)
             {
                 case 1:
@@ -74,15 +75,13 @@ public class PirateSpawner : MonoBehaviour
                     PlayerController.MaxHealth++;
                     break;
             }
-        }
+        
         
               
     }
     
     public void DeletePirate()
     {
-        if (pirateCount<=6)
-        {
             switch (pirateCount)
             {
                 case 1:
@@ -114,7 +113,7 @@ public class PirateSpawner : MonoBehaviour
                     PlayerController.MaxHealth--;
                     break;
             }
-        }
+        
         
               
     }
