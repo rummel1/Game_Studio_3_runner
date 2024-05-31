@@ -27,8 +27,8 @@ public class PlayerController: MonoBehaviour
 
     private int _levelScore;
     private int _bestScore;
-    private int _fastspeed=400;
-    private int _slowspeed=150;
+    private int _fastspeed=700;
+    private int _slowspeed=300;
     private int _upspeed;
     private bool _upSpeedControl;
 
@@ -36,8 +36,8 @@ public class PlayerController: MonoBehaviour
     public Animator Pirateanim;
     public Animator Pirateanimhealth;
     public GameObject deadScreen;
-    public static float _forwardSpeed=150;
-    public static float _leftrightSpeed=150;
+    public static float _forwardSpeed=300;
+    public static float _leftrightSpeed=300;
 
     public void Start()
     {
