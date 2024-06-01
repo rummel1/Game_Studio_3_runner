@@ -50,7 +50,7 @@ public class PlatformManager : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         for (int i = 0; i < 4; i++)
         {
-            GameObject platform = platforms[Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 4)];
+            GameObject platform = platforms[Random.Range(0, 3) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 4)];
             GameObject nesne = Instantiate(platform,new Vector3(platform.transform.position.x,platform.transform.position.y,Platform.endPoint.z), Quaternion.identity);
             Destroy(nesne,60);
             yield return new WaitForSeconds(0.01f);
@@ -64,14 +64,14 @@ public class PlatformManager : MonoBehaviour
     }
     private void SecondPlatformSpawn()
     {
-        int random = Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 3)+Random.Range(0, 4);
+        int random = Random.Range(0, 3) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 4);
         GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,90);
     }
     
     private void FirstPlatformSpawn()
     {
-        int random = Random.Range(0, 3);
+        int random = Random.Range(0, 3)+Random.Range(0,5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 5) + Random.Range(0, 4);
         GameObject nesne = Instantiate(platforms[random],new Vector3(platforms[random].transform.position.x,platforms[random].transform.position.y,Platform.endPoint.z), Quaternion.identity);
         Destroy(nesne,90);
     }
