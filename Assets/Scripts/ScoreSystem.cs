@@ -33,9 +33,9 @@ public class ScoreSystem : MonoBehaviour
     {
         while (true)
         {
-            score += 1;
+            score += 1+ PlayerController._forwardSpeed/100;
             UpdateScoreText();
-            yield return new WaitForSeconds(0.05f); 
+            yield return new WaitForSeconds(0.1f); 
         }
     }
     

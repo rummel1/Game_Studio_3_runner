@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Interfaces;
+using LeaderboardCreatorDemo;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,6 +16,7 @@ public class PlayerController: MonoBehaviour
    
     public Boundary boundary;
 
+    public LeaderboardManager LeaderboardManager;
     public SpeedBar SpeedBar;
     //[SerializeField] private Joystick _joystick;
 
@@ -34,10 +36,9 @@ public class PlayerController: MonoBehaviour
 
 
     public Animator Pirateanim;
-    public Animator Pirateanimhealth;
     public GameObject deadScreen;
-    public static float _forwardSpeed=300;
-    public static float _leftrightSpeed=300;
+    public static int _forwardSpeed=300;
+    public static int _leftrightSpeed=300;
 
     public void Start()
     {
@@ -50,14 +51,17 @@ public class PlayerController: MonoBehaviour
     {
         if (MaxHealth==0)
         {
+
             _levelScore = ScoreSystem.instance.score;
             Debug.Log("best score" + _levelScore);
             deadScreen.SetActive(true);
             gameObject.SetActive(false);
+            LeaderboardManager.UploadEntry();
             if (_levelScore>_bestScore)
             {
                 //best score'u kaydet ve yazdır.
             }
+            
             
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
@@ -133,7 +137,6 @@ public class PlayerController: MonoBehaviour
             
             float waitTime = UnityEngine.Random.Range(5f, 15f);
             Pirateanim.SetTrigger("Ter");
-            Pirateanimhealth.SetTrigger("Yell");
             yield return new WaitForSeconds(waitTime);
         }
         
