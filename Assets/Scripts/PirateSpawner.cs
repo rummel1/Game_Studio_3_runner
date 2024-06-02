@@ -86,31 +86,37 @@ public class PirateSpawner : MonoBehaviour
             {
                 case 1:
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 2:
                     Destroy(pirateObj[0]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 3:
                     Destroy(pirateObj[1]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 4:
                     Destroy(pirateObj[2]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 5:
                     Destroy(pirateObj[3]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 6:
                     Destroy(pirateObj[4]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
+                    CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
             }
         
