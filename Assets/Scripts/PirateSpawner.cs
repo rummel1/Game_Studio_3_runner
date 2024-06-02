@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class PirateSpawner : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PirateSpawner : MonoBehaviour
     [SerializeField] private GameObject piratePrefab;
     [SerializeField] private Transform pirateShip;
     [SerializeField] private Transform[] piratePositions;
+
+    public AudioClip[] obstacleSound;
 
     private void Awake()
     {
@@ -85,34 +88,40 @@ public class PirateSpawner : MonoBehaviour
             switch (pirateCount)
             {
                 case 1:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 2:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     Destroy(pirateObj[0]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 3:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     Destroy(pirateObj[1]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 4:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     Destroy(pirateObj[2]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 5:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     Destroy(pirateObj[3]);
                     pirateCount--;
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
                 case 6:
+                    SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     Destroy(pirateObj[4]);
                     pirateCount--;
                     PlayerController.MaxHealth--;

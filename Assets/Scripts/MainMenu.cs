@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject AthensShip;
     public GameObject speedbar;
     public GameObject score;
+    public GameObject sound;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        sound.SetActive(true);
         AthensShip.SetActive(true);
         speedbar.SetActive(true);
         score.SetActive(true);

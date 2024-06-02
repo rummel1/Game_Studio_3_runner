@@ -35,6 +35,7 @@ public class PlayerController: MonoBehaviour
     private bool _upSpeedControl;
 
 
+    public GameObject sound;
     public Animator Pirateanim;
     public GameObject deadScreen;
     public static int _forwardSpeed=300;
@@ -53,6 +54,7 @@ public class PlayerController: MonoBehaviour
         if (MaxHealth==0)
         {
 
+            sound.SetActive(false);
             _levelScore = ScoreSystem.instance.score;
             Debug.Log("best score" + _levelScore);
             deadScreen.SetActive(true);
@@ -147,6 +149,7 @@ public class PlayerController: MonoBehaviour
     }
     public void RetryButton()
     {
+        sound.SetActive(true);
         ScoreSystem.instance.ResetScore();
         PirateSpawner.pirateCount = 1;
         gameObject.SetActive(true);
