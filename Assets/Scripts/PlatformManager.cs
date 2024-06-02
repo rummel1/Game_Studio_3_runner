@@ -7,11 +7,7 @@ public class PlatformManager : MonoBehaviour
     [SerializeField] private GameObject[] platforms;
     [SerializeField] private GameObject fish1;
     [SerializeField] private Transform player;
-    private Vector3 eren;
     
-
-    private float secondTime=60.1f;
-    private float firstTime = 90.1f;
     
     public void Start()
     {

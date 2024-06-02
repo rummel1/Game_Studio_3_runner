@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 public class PirateSpawner : MonoBehaviour
 {
 
+    public GameObject retryButton;
     public static PirateSpawner instance { get; set; }
     public static int pirateCount=1;
     private GameObject[] pirateObj;
@@ -38,13 +39,9 @@ public class PirateSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (PlayerController.MaxHealth>0)
         {
-            SpawnPirate();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            DeletePirate();
+            retryButton.SetActive(false);
         }
     }
     
@@ -78,9 +75,6 @@ public class PirateSpawner : MonoBehaviour
                     PlayerController.MaxHealth++;
                     break;
             }
-        
-        
-              
     }
     
     public void DeletePirate()
@@ -88,6 +82,7 @@ public class PirateSpawner : MonoBehaviour
             switch (pirateCount)
             {
                 case 1:
+                    StartCoroutine(VideoRetry());
                     SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
@@ -128,11 +123,14 @@ public class PirateSpawner : MonoBehaviour
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
                     break;
             }
-        
-        
               
     }
-   
+   private IEnumerator VideoRetry()
+   {
+       yield return new WaitForSeconds(10);
+       retryButton.SetActive(true);
+           
+    }
 
     
 }
