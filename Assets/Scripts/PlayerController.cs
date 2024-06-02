@@ -39,6 +39,7 @@ public class PlayerController: MonoBehaviour
     public GameObject deadScreen;
     public static int _forwardSpeed=300;
     public static int _leftrightSpeed=300;
+    public static bool WoodObstacle;
 
     public void Start()
     {
@@ -68,6 +69,7 @@ public class PlayerController: MonoBehaviour
         {
             _forwardSpeed =_fastspeed;
             _upSpeedControl = true;
+            WoodObstacle = true;
 
         }
 
@@ -79,6 +81,7 @@ public class PlayerController: MonoBehaviour
         {
             _forwardSpeed = _slowspeed;
             _upSpeedControl = false;
+            WoodObstacle = false;
         }
         
         switch (_upSpeedControl)
