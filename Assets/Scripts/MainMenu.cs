@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,24 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject tutorialMenu;
     public GameObject leaderboard;
+
+    public GameObject AthensShip;
+    public GameObject speedbar;
+    public GameObject score;
+
+    private void Start()
+    {
+        speedbar.SetActive(false);
+        score.SetActive(false);
+        AthensShip.SetActive(false);
+    }
+
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("first_scene");
+        AthensShip.SetActive(true);
+        speedbar.SetActive(true);
+        score.SetActive(true);
+        mainMenu.SetActive(false);
     }
     public void QuitGame()
     {
