@@ -29,8 +29,8 @@ public class PlayerController: MonoBehaviour
 
     private int _levelScore;
     private int _bestScore;
-    private int _fastspeed=700;
-    private int _slowspeed=300;
+    public static int fastspeed=700;
+    public static int slowspeed=300;
     private int _upspeed;
     private bool _upSpeedControl;
 
@@ -69,7 +69,7 @@ public class PlayerController: MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W)&& _upspeed<100)
         {
-            _forwardSpeed =_fastspeed;
+            _forwardSpeed =fastspeed;
             _upSpeedControl = true;
             WoodObstacle = true;
 
@@ -81,7 +81,7 @@ public class PlayerController: MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.W)|| _upspeed==100)
         {
-            _forwardSpeed = _slowspeed;
+            _forwardSpeed = slowspeed;
             _upSpeedControl = false;
             WoodObstacle = false;
         }
@@ -157,6 +157,15 @@ public class PlayerController: MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         deadScreen.SetActive(false);
         
+    }
+
+    public void MainMenu()
+    {
+        
+        ScoreSystem.instance.ResetScore();
+        PirateSpawner.pirateCount = 1;
+        MaxHealth = 1;
+        transform.position = new Vector3(0, 0, 0);
     }
     
 }

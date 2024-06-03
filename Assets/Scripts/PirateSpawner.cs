@@ -11,6 +11,7 @@ public class PirateSpawner : MonoBehaviour
 {
 
     public GameObject retryButton;
+    public GameObject MainMenuButton;
     public static PirateSpawner instance { get; set; }
     public static int pirateCount=1;
     private GameObject[] pirateObj;
@@ -42,6 +43,7 @@ public class PirateSpawner : MonoBehaviour
         if (PlayerController.MaxHealth>0)
         {
             retryButton.SetActive(false);
+            MainMenuButton.SetActive(false);
         }
     }
     
@@ -129,6 +131,7 @@ public class PirateSpawner : MonoBehaviour
    {
        yield return new WaitForSeconds(10);
        retryButton.SetActive(true);
+       MainMenuButton.SetActive(true);
            
     }
 

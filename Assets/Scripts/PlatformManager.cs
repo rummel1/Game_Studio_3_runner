@@ -17,11 +17,13 @@ public class PlatformManager : MonoBehaviour
     public void PlatformStart()
     {
         foreach (var o in GameObject.FindGameObjectsWithTag("Environment")) Destroy(o);
+        foreach (var o in GameObject.FindGameObjectsWithTag("Fish")) Destroy(o);
+        
                
                 Platform.endPoint = new Vector3(0, 0, 0);
                 StartCoroutine(FirstSpawn());
                 InvokeRepeating(nameof(FirstPlatformSpawn),1,3);
-                InvokeRepeating(nameof(FirstFishSpawn),4,Random.Range(5,10));
+                InvokeRepeating(nameof(FirstFishSpawn),7,Random.Range(30,45));
     }
 
     // Update is called once per frame
@@ -46,8 +48,8 @@ public class PlatformManager : MonoBehaviour
     private void FirstFishSpawn()
     {
         
-       // GameObject nesne = Instantiate(fish1,new Vector3(fish1.transform.position.x,fish1.transform.position.y,player.position.z+Random.Range(5,10)), Quaternion.identity);
-       // Destroy(nesne,15);
+       GameObject nesne = Instantiate(fish1,new Vector3(fish1.transform.position.x,fish1.transform.position.y,player.position.z+Random.Range(20,25)), Quaternion.identity);
+       Destroy(nesne,15);
     }
   
     

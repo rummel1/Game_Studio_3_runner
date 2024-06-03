@@ -24,11 +24,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        
         sound.SetActive(true);
         AthensShip.SetActive(true);
         speedbar.SetActive(true);
         score.SetActive(true);
         mainMenu.SetActive(false);
+        ScoreSystem.instance.ResetScore();
     }
     public void QuitGame()
     {
