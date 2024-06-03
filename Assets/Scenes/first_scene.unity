@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16616815, g: 0.37293535, b: 0.8064536, a: 1}
+  m_IndirectSpecularColor: {r: 0.1661683, g: 0.37293535, b: 0.8064536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -587,7 +587,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d855a9466a96e1f4e9adfbb508ec911b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1332,7 +1332,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d855a9466a96e1f4e9adfbb508ec911b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5207,6 +5207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: odunengel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319872615657322820, guid: c17aeb58c99c8a347a7d2d3f20f720cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
