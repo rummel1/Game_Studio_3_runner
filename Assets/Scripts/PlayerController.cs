@@ -51,14 +51,12 @@ public class PlayerController: MonoBehaviour
 
     private void Update()
     {
-        if (MaxHealth==0)
-        {
-
+        if (MaxHealth<=0)
+        {  
+            deadScreen.SetActive(true); 
+            gameObject.SetActive(false);
             sound.SetActive(false);
             _levelScore = ScoreSystem.instance.score;
-            Debug.Log("best score" + _levelScore);
-            deadScreen.SetActive(true);
-            gameObject.SetActive(false);
             LeaderboardManager.UploadEntry();
             if (_levelScore>_bestScore)
             {
@@ -161,7 +159,6 @@ public class PlayerController: MonoBehaviour
 
     public void MainMenu()
     {
-        
         ScoreSystem.instance.ResetScore();
         PirateSpawner.pirateCount = 1;
         MaxHealth = 1;

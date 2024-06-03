@@ -40,6 +40,8 @@ public class PirateSpawner : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("pirate"+pirateCount);
+        Debug.Log(PlayerController.MaxHealth);
         if (PlayerController.MaxHealth>0)
         {
             retryButton.SetActive(false);
@@ -84,10 +86,10 @@ public class PirateSpawner : MonoBehaviour
             switch (pirateCount)
             {
                 case 1:
-                    StartCoroutine(VideoRetry());
                     SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);
                     PlayerController.MaxHealth--;
                     CinemachineShake.instance.ShakeCamera(10f,0.6f);
+                    StartCoroutine(VideoRetry());
                     break;
                 case 2:
                     SoundManager.instance.PlaySound(obstacleSound[Random.Range(0,2)]);

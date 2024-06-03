@@ -1079,7 +1079,6 @@ GameObject:
   - component: {fileID: 3364410504188163234}
   - component: {fileID: 3585899363364916099}
   - component: {fileID: 8214105852102453305}
-  - component: {fileID: 7301572941777454526}
   m_Layer: 0
   m_Name: BarrelFire (10)
   m_TagString: Untagged
@@ -1096,7 +1095,7 @@ Transform:
   m_GameObject: {fileID: 4462470019095768815}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 6.71, y: -0.060000002, z: -8.68}
+  m_LocalPosition: {x: 6.71, y: 0.462, z: -8.68}
   m_LocalScale: {x: 85.86569, y: 85.865685, z: 85.865685}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1187,27 +1186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802890eae98e4e042a5549d7ddcc5650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &7301572941777454526
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462470019095768815}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6c3f6672e1d4a049a658c846ab267e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4687152239993639996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1199,6 @@ GameObject:
   - component: {fileID: 1752764509740213385}
   - component: {fileID: 6786672692780676975}
   - component: {fileID: 6109885735659902152}
-  - component: {fileID: 3887095853229644832}
   m_Layer: 0
   m_Name: BarrelFire (11)
   m_TagString: Untagged
@@ -1238,7 +1215,7 @@ Transform:
   m_GameObject: {fileID: 4687152239993639996}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 8.3, y: -0.060000002, z: 9.29}
+  m_LocalPosition: {x: 8.3, y: 0.462, z: 9.29}
   m_LocalScale: {x: 85.86569, y: 85.865685, z: 85.865685}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1329,27 +1306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802890eae98e4e042a5549d7ddcc5650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &3887095853229644832
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4687152239993639996}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6c3f6672e1d4a049a658c846ab267e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4922582294399229370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,7 +2011,6 @@ GameObject:
   - component: {fileID: 2449160008493883164}
   - component: {fileID: 6872065048856474902}
   - component: {fileID: 5085210041182767718}
-  - component: {fileID: 8249963187644521025}
   m_Layer: 0
   m_Name: BarrelFire (9)
   m_TagString: Untagged
@@ -2072,7 +2027,7 @@ Transform:
   m_GameObject: {fileID: 7531264487161215697}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.35, y: -0.06, z: 14.11}
+  m_LocalPosition: {x: 1.35, y: 0.462, z: 14.11}
   m_LocalScale: {x: 85.86569, y: 85.865685, z: 85.865685}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2163,27 +2118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802890eae98e4e042a5549d7ddcc5650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &8249963187644521025
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7531264487161215697}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6c3f6672e1d4a049a658c846ab267e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7591273868749864355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,7 +2214,6 @@ GameObject:
   - component: {fileID: 3884794762306874900}
   - component: {fileID: 4900491988884605591}
   - component: {fileID: 544845962772056495}
-  - component: {fileID: 2616618662782342614}
   m_Layer: 0
   m_Name: BarrelFire (12)
   m_TagString: Untagged
@@ -2297,7 +2230,7 @@ Transform:
   m_GameObject: {fileID: 8863010192859771972}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.57, y: -0.060000002, z: -14.24}
+  m_LocalPosition: {x: 1.57, y: 0.462, z: -14.24}
   m_LocalScale: {x: 85.86569, y: 85.865685, z: 85.865685}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2388,27 +2321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802890eae98e4e042a5549d7ddcc5650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &2616618662782342614
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8863010192859771972}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6c3f6672e1d4a049a658c846ab267e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &155394202279618522
 PrefabInstance:
   m_ObjectHideFlags: 0

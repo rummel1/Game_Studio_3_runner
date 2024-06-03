@@ -37,7 +37,6 @@ public class ChangeDifficultiy : MonoBehaviour
                 PlayerController.fastspeed += 2;
                 PlayerController.slowspeed += 2;
                 _equalsTime += 1;
-                Debug.Log(PlayerController._forwardSpeed);
                 
                 
             }
