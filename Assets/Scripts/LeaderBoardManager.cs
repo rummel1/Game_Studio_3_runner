@@ -28,7 +28,7 @@ namespace LeaderboardCreatorDemo
             // Q: How do I reference my own leaderboard?
             // A: Leaderboards.<NameOfTheLeaderboard>
         
-            Leaderboards.Runner.GetEntries(entries =>
+            Leaderboards.RunnerSecond.GetEntries(entries =>
             {
                 foreach (var t in _entryTextObjects)
                     t.text = "";
@@ -40,7 +40,7 @@ namespace LeaderboardCreatorDemo
         
         public void UploadEntry()
         {
-            Leaderboards.Runner.UploadNewEntry(_usernameInputField.text, Score, isSuccessful =>
+            Leaderboards.RunnerSecond.UploadNewEntry(_usernameInputField.text, Score, isSuccessful =>
             {
                 if (isSuccessful)
                     LoadEntries();
