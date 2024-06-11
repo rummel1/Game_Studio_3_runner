@@ -1,6 +1,8 @@
-3D Artist - Alper Çağlayan \n
-Game Developer - Eren Çoker \n
-Level Designer - Kahraman Erdal Uygur \n
+3D Artist - Alper Çağlayan
+
+Game Developer - Eren Çoker
+
+Level Designer - Kahraman Erdal Uygur
 
 
 **The leaderboard system works through an online system. It provides specific ratings for each different computer.
